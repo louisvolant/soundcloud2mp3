@@ -162,6 +162,7 @@ cython_debug/
 #.idea/
 
 *.mp3
-/myenv/
+*.zip
+myenv/
 .DS_Store
 config.py

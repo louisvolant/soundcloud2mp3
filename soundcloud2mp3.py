@@ -58,16 +58,16 @@ def download_soundcloud_audio(url, output_path=BASE_OUTPUT_FILENAME, audio_quali
 
 def main():
     parser = argparse.ArgumentParser(description='Download Soundcloud audio and convert to MP3.')
-    parser.add_argument('url', type=str, help='The URL of the Soundcloud video')
+    parser.add_argument('url', type=str, help='The URL of the Soundcloud audio')
     # Example : python3 soundcloud2mp3.py https://soundcloud.com/ACCOUNT_NAME/SONG_NAME output_example.mp3
     parser.add_argument('-o', '--output', default='downloads', help='Output directory')
     parser.add_argument('-q', '--audio-quality', default=TARGET_BITRATE, help='Audio quality (e.g., 128K, 192K, 320K)')
 
     args = parser.parse_args()
 
-    # Get the video title and sanitize it for use as a filename
-    video_title = get_soundcloud_title(args.url)
-    sanitized_title = sanitize_filename(video_title)
+    # Get the audio title and sanitize it for use as a filename
+    audio_title = get_soundcloud_title(args.url)
+    sanitized_title = sanitize_filename(audio_title)
     output_path = f"{sanitized_title}.mp3"
 
     logging.info('Processing: {0} and storing to {1}'.format(args.url, output_path))
